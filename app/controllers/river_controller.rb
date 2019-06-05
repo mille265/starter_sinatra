@@ -52,7 +52,7 @@ class RiverController < Sinatra::Base
 
         continent_name = params['name_continent']
         
-        id_continent = Continent.find(name: continent_name)
+        id_continent = Continent.find_by(name: continent_name)
         id_continent = id_continent.id
 
         @river.update(name: params[:name_river],
