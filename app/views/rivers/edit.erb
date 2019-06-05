@@ -12,6 +12,11 @@
         <input type='hidden' name='_method' value='PATCH'>
         <label for="name_continent">Continent</label>
         <input type="text" name="name_continent" value=<%=@river.continent.name%>>
+        <select name="name_continent">
+            <% Continent.all.each do |continent| %>
+             <option value="<%= continent.id %>"><%= continent.name %></option>
+            <% end %>
+         </select>
         <label for="name_river">Name of River</label>
         <input type="text" name="name_river" value=<%=@river.name%>>
         <label for="num_countries_pass_through">Number of Countries River Passes Through</label>
