@@ -4,7 +4,7 @@ class CreateRiversTable < ActiveRecord::Migration[5.2]
 
     create_table :rivers do |t|
       t.string :name
-      t.string :continent 
+      t.integer :continent_id 
       t.integer :num_countries_pass_through 
     end 
   end

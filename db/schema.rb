@@ -14,12 +14,11 @@ ActiveRecord::Schema.define(version: 2019_06_05_161050) do
 
   create_table "continents", force: :cascade do |t|
     t.string "name"
-    t.integer "number_of_countries"
   end
 
   create_table "rivers", force: :cascade do |t|
     t.string "name"
-    t.string "continent"
+    t.integer "continent_id"
     t.integer "num_countries_pass_through"
   end
 
