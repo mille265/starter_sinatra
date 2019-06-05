@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rivers Index Page</title>
+</head>
+<body>
+
+    <h1>All the Rivers</h1>
+
+        <ul> 
+            <% @rivers.each do |river| %>
+                <li>
+                    <a href="/rivers/<%= river.id %>">
+                        <%= river.name %>
+                    
+                    </a>
+                </li>
+            <% end %>
+        </ul>
+</body>
+
+</html>

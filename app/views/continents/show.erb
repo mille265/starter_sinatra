@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detail page</title>
+</head>
+<body>
+
+    <h1><%= @continent.name %></h1>
+
+    <ul>
+        <% @continent.rivers.each do |river| %>
+            <li><a href="/rivers/<%= river.id %>"><% river.name %></a></li>
+        <% end %>
+    </ul>
+</body>
+</html>

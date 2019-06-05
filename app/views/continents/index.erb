@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Continents Index Page</title>
+</head>
+<body>
+
+    <h1>All the Continents</h1>
+
+        <ul> 
+            <% @continents.each do |continent| %>
+                <li>
+                    <a href="/continents/<%= continent.id %>">
+                        <%= continent.name %>
+                    
+                    </a>
+                </li>
+            <% end %>
+        </ul>
+</body>
+
+</html>
