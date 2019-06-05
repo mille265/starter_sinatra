@@ -13,7 +13,8 @@ class RiverController < Sinatra::Base
     #will create a new river with /rivers/new form
     post "/rivers" do
         continent_name = params["name_continent"]
-        continent = Continent.find_or_create_by(name: continent_name)
+
+        continent = Continent.find_by(id: continent_name)
         
         river_name = params['name_river']
 
@@ -44,18 +45,15 @@ class RiverController < Sinatra::Base
         erb :edit
     end
 
-
     #edit a river
     patch "/rivers/:id" do
         id = params[:id]
         @river = River.find(id)
 
         continent_name = params['name_continent']
-        id_continent = Continent.find_or_create_by(name: continent_name)
+        
+        id_continent = Continent.find(name: continent_name)
         id_continent = id_continent.id
-
-        # binding.pry
-
 
         @river.update(name: params[:name_river],
             continent_id: id_continent,
