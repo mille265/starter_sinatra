@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit River Form</title>
+</head>
+<body>
+
+    <h1>Edit This River</h1>
+
+
+    <form action="/rivers/<%=@river.id%>" method="POST">
+        <input type='hidden' name='_method' value='PATCH'>
+        <label for="name_continent">Continent</label>
+        <input type="text" name="name_continent" value=<%=@river.continent.name%>>
+        <label for="name_river">Name of River</label>
+        <input type="text" name="name_river" value=<%=@river.name%>>
+        <label for="num_countries_pass_through">Number of Countries River Passes Through</label>
+        <input type="text" name="num_countries_pass_through" value=<%=@river.num_countries_pass_through%>>
+        <input type="submit" value="Update River">
+    </form>
+
+</body>
+</html>

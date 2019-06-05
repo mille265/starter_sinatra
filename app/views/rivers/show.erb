@@ -4,11 +4,19 @@
     <title>Detail Page</title>
 </head>
 <body>
-    <h2><% @river.name %></h2>
+
+    <h2>Name of River: <%= @river.name %></h2>
+
     <div>Continent Name: <%= @river.continent.name %></div>
-    <div>River Name: <%= @river.name %></div>
-    <div> Number of Countries This River Passes Through: <%= @river.num_countries_pass_through  %></div>
-    
+
+    <div>Number of Countries This River Passes Through: <%= @river.num_countries_pass_through  %></div>
+
+    <form action="/rivers/<%= @river.id %>" method='POST'>
+        <input type='hidden' name='_method' value='delete'>
+        <input type='submit' value='Delete This River'>
+    </form>
+
+    <a href='/rivers'>River Index Page</a>
 
 </body>
 </html>
