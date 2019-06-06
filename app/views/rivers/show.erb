@@ -11,12 +11,14 @@
 
     <div>Number of Countries This River Passes Through: <%= @river.num_countries_pass_through  %></div>
 
-    <form action="/rivers/<%= @river.id %>" method='POST'>
-        <input type='hidden' name='_method' value='delete'>
-        <input type='submit' value='Delete This River'>
+    <form action="/rivers/<%=@river.id%>" method='POST'>
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="Delete This River">
     </form>
 
-    <a href='/rivers'>River Index Page</a>
+    <button onclick="/rivers/<%=@river.id%> = 'http://localhost:9393/rivers/<%=@river.id%>/edit';">Edit This River</button>
+    <div>
+    <button onclick="/rivers'> = 'http://localhost:9393/rivers';">Return to Rivers Index</button>
 
 </body>
 </html>

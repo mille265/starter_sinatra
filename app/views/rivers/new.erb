@@ -9,12 +9,12 @@
 
     <form action="/rivers" method="POST">
 
-        <label for="name_river">Name of River</label>
+        <label for="river_name">Name of River</label>
         <input type="text" name="name_river">
 
-        <label for="name_continent">Continent</label>
+        <label for="continent_name">Continent</label>
 
-        <select name="name_continent">
+        <select name="continent_name">
             <% Continent.all.each do |continent| %>
               <option value="<%= continent.id %>"><%= continent.name %></option>
             <% end %>

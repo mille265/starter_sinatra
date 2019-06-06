@@ -9,20 +9,30 @@
 
 
     <form action="/rivers/<%=@river.id%>" method="POST">
-        <input type='hidden' name='_method' value='PATCH'>
-        <label for="name_continent">Continent</label>
-        <input type="text" name="name_continent" value=<%=@river.continent.name%>>
-        <select name="name_continent">
+        <input type="hidden" name="_method" value="PATCH">
+        <label for="continent_name">Continent</label>
+        <select name="continent_name">
             <% Continent.all.each do |continent| %>
-             <option value="<%= continent.id %>"><%= continent.name %></option>
+             <option <%if continent.id == @river.continent.id%> 
+                selected <%end%>
+              value="<%= continent.id %>"><%= continent.name %></option>
             <% end %>
          </select>
-        <label for="name_river">Name of River</label>
-        <input type="text" name="name_river" value=<%=@river.name%>>
+        <label for="river_name">Name of River</label>
+        <input type="text" name="river_name" value="<%=@river.name%>">
         <label for="num_countries_pass_through">Number of Countries River Passes Through</label>
         <input type="text" name="num_countries_pass_through" value=<%=@river.num_countries_pass_through%>>
+        <div>
         <input type="submit" value="Update River">
+        </div>
     </form>
+
+    <form action="/rivers/<%=@river.id%>" method='redirect'>
+        <input type="hidden" name="_method" value="patch">
+        <input type="submit" value="Cancel Edit">
+    </form>
+
+
 
 </body>
 </html>

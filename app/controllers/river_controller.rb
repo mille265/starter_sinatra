@@ -12,11 +12,11 @@ class RiverController < Sinatra::Base
 
     #will create a new river with /rivers/new form
     post "/rivers" do
-        continent_name = params["name_continent"]
+        continent_name = params["continent_name"]
 
         continent = Continent.find_by(id: continent_name)
         
-        river_name = params['name_river']
+        river_name = params['river_name']
 
         num_countries_pass_through = params["num_countries_pass_through"]
         river = River.create(name: river_name, continent_id: continent.id, num_countries_pass_through: num_countries_pass_through)
@@ -47,16 +47,16 @@ class RiverController < Sinatra::Base
 
     #edit a river
     patch "/rivers/:id" do
+
         id = params[:id]
         @river = River.find(id)
 
-        continent_name = params['name_continent']
-        
-        id_continent = Continent.find_by(name: continent_name)
-        id_continent = id_continent.id
+        continent_name = params['continent_name']
+        continent_id = Continent.find_by(id: continent_name)
+        continent_id = continent_id.id
 
-        @river.update(name: params[:name_river],
-            continent_id: id_continent,
+        @river.update(name: params[:river_name],
+            continent_id: continent_id,
             num_countries_pass_through: params[:num_countries_pass_through])
 
         redirect "/rivers/#{@river.id}"
