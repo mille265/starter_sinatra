@@ -4,14 +4,7 @@
     <title>Detail Page</title>
 </head>
 <body>
-
-    <h2>Name of River: <%= @river.name %></h2>
-
-    <div>Continent Name: <%= @river.continent.name %></div>
-
-    <div>Number of Countries This River Passes Through: <%= @river.num_countries_pass_through  %></div>
-
-    <form action="/rivers/<%=@river.id%>" method='POST'>
+<form action="/rivers/<%=@river.id%>" method='POST'>
         <input type="hidden" name="_method" value="delete">
         <input type="submit" value="Delete This River">
     </form>
@@ -19,6 +12,14 @@
     <button onclick="/rivers/<%=@river.id%> = 'http://localhost:9393/rivers/<%=@river.id%>/edit';">Edit This River</button>
     <div>
     <button onclick="/rivers'> = 'http://localhost:9393/rivers';">Return to Rivers Index</button>
+    <div>
+    <h2><p style="margin-left: 10px"> <u> <%=@river.name %></u></p></h2>
+    <div>
+    <p style="margin-left: 20px">*Found in  <b><u><%= @river.continent.name %></u></b></li></p>
+    <div>
+    <p style="margin-left: 20px">*Passes through <b><u><%=@river.num_countries_pass_through%></u></b> country/countries </p>
+    <div>
+    
 
 </body>
 </html>

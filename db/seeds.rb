@@ -7,3 +7,4 @@ Continent.create(name: "Africa")
 Continent.create(name: "Europe")
 Continent.create(name: "Australia")
 Continent.create(name: "Antarctica")
+
