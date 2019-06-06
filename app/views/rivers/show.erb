@@ -15,11 +15,14 @@
         <input type="hidden" name="_method" value="delete">
         <input type="submit" value="Delete This River">
     </form>
-    <br>
+    
+    <form action="http://localhost:9393/rivers/<%=@river.id%>/edit">
+         <button type="submit">Edit this River</button>
+    </form>
+    <div>
     <form action="http://localhost:9393/rivers">
          <button type="submit">Return to Index</button>
     </form>
-    
     
 
 </body>
