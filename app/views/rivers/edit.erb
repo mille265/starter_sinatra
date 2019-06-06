@@ -8,8 +8,8 @@
     <h1>Edit This River</h1>
 
 
-    <form action="/rivers/<%=@river.id%>" method="POST">
-        <input type="hidden" name="_method" value="PATCH">
+    <form action="/rivers/<%=@river.id%>" method='POST'>
+        <input type="hidden" name="_method" value='patch'>
         <label for="continent_name">Continent</label>
         <select name="continent_name">
             <% Continent.all.each do |continent| %>
